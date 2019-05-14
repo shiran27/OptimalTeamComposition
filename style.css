@@ -1,0 +1,221 @@
+/* style.css */
+body {
+	padding: 0;
+	margin: 0;
+	color: #333;
+	background-color: #fff;
+}
+
+
+#myDiv{
+	height: 300px;
+	max-width: 500px;
+	min-width: 500px;
+	margin: 0 50px 0 50px;*/	
+}
+
+#buttonRow {
+    padding-bottom:7px;
+}
+
+#resetButton{
+	background-color: #FF8665;
+}
+
+#canvasHolder{
+	width: 600px; 
+	height: 600px;
+	align-self: center;
+	margin-bottom: 20px;
+
+    /*border: 10px solid transparent;*/
+    /*padding: 15px;*/
+    /*border-image: url(canvas_border.png) 30 stretch;*/
+	/*border: 2px solid gray; */
+	/*position: absolute;
+    margin: auto;*/
+}
+
+#blankColumn{
+    width: 10px; 
+}
+.input-group{
+	margin-left: 10px;
+	width: 100%;
+}
+.input-group-2{
+    margin-left: 10px;
+}
+
+#displayCoverageDensity{
+	margin-left: 40px;
+}
+
+
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin:15px; 
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slidecontainer{
+	margin-left: 10px;
+}
+
+#stepSizeMultiplier{
+	width:100%; 
+}
+
+.form-check{
+	margin-top: 30px;
+	/*margin-bottom: 30px;*/
+}
+
+.jumbotron{
+    color: #2c3e50;
+    margin-bottom: 0px;
+    /*padding-top: 10px;*/
+    padding: 10px;
+}
+
+#displayPhysicalAgents{
+    margin-bottom: 15px;
+    margin-left: 83px
+ /*   margin-top: 10px;
+}
+
+#simulationTime{
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+#addObstacleButton{
+    /*margin-bottom: 20px;*/
+
+}
+
+#obstacleCoordinatesDisplay{
+    margin-bottom: 20px;
+
+}
+#consoleText{
+    color: blue;
+}
+
+#boostingButtons2{
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+}
+
+
+
+#boostingParameterFields{
+    padding-left: 2px;
+    padding-right: 2px; 
+}
+
+#saveDataForm{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#trajectoryButtons{
+    margin-top: 15px;
+    padding-left: 0px;
+    margin-left: 0px;
+    /*margin-right: 10px;*/
+}
+
+#submodularityButtons{
+    margin-top: 0px;
+    margin-bottom: 75px;
+    padding-left: 0px;
+    margin-left: 0px;
+    /*margin-right: 10px;*/
+}
+
+
+#obstacleMenu{
+    margin-left: 15px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+#obstacleCoordinatesDisplayDiv{
+    padding-right: 0px;
+}
+/*#canvasHolder{
+    border:10px solid #000000;
+}*/
+
+h4.scrollClass {
+    background-color:#ddd;
+    /*width: 110px;*/
+    height: 100px;
+    overflow: scroll;
+}
+
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+      
+.alert {
+    padding: 20px;
+    background-color: #DF9118;
+    color: white;
+    display: none;
+
+}
+
+#noMargin1{
+    margin-left: 0px;
+    /*margin-right: 0px; */
+    padding-left: 0px;
+    /*padding-right: 0px;*/
+}

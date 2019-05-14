@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+
+
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<!-- <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> -->
+	<meta name=viewport content=width=device-width,user-scalable=no,initial-scale=1>
+	
+	<link rel="icon" href="Coverage.jpg">
+	
+	<title>Coverage</title>
+	
+	
+	<script src="libraries/p5.js" type="text/javascript"></script>
+	<script src="libraries/p5.dom.js" type="text/javascript"></script>
+	<script src="libraries/p5.sound.js" type="text/javascript"></script>
+	<script src="libraries/p5.play.js" type="text/javascript"></script>
+
+
+	
+	
+
+	<!-- <script src="speed.js"></script> -->
+	<!-- <script src="sensing.js"></script> -->
+	
+	
+	<script src="particle.js"></script>
+	<script src="obstacle.js"></script>
+	<script src="point2.js"></script>
+	<script src="event.js"></script>
+	<script src="simulation.js"></script>
+
+	<script src="sketch.js"></script>
+	<script src="mathTools.js"></script>
+	
+	<script src="math.js"></script>
+	
+	
+
+	<!-- <script src="plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+	<!-- <link rel="stylesheet" type="text/css" href="fontawesome.min.css"> -->
+	<script src="fontawesome.js"></script>
+	<!-- <script src="https://use.fontawesome.com/2b3bbb7e25.js"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="style.css">
+	
+
+
+</head>
+
+
+
+
+
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			
+			<h2 align="center">
+				<i class="fa fa-taxi" aria-hidden="true"></i>
+				<i class="fa fa-signal" aria-hidden="true"></i>
+				<!-- <i class="fa fa-stack-exchange" aria-hidden="true"></i> -->
+				<i class="fa fa-ban" aria-hidden="true"></i>
+				<!-- <i class="fa fa-clock-o" aria-hidden="true"></i>
+				<i class="fa fa-battery-quarter" aria-hidden="true"></i> -->
+			</h2>
+	        
+	        <h2 align="center">Multi Agent Coverage Control Simulation</h2>
+			
+		</div>
+	</div>
+
+
+	<div class="container">
+		
+		<div class="row">
+
+			<div class="col-lg-12">
+				<h4 class="scrollClass" id="consoleText"></h4>
+			</div>
+			
+
+		</div>
+
+		<div class="alert" id="alertBox">
+  			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  				Initializing – Please Wait.
+		</div>
+
+		<div class="row">
+			
+			<div id="buttonRow" class="col-lg-4 col-md-4 col-sm-6">
+
+                <a id="playButton" class="btn btn-success btn-md" onclick="initiateStart();">
+                	<i class="fa fa-play" aria-hidden="true"></i> Start
+                </a>
+
+
+                <a id="stopButton" class="btn btn-warning btn-md" onclick="stopParticle();">
+                	<i class="fa fa-pause" aria-hidden="true"></i></span> Pause
+                </a>
+
+
+                <a id="resetButton" class="btn btn-success btn-md" onclick="reset();">
+                	<i class="fa fa-stop" aria-hidden="true"></i> Reset
+                </a>
+
+
+                <a id="resetAllButton" class="btn btn-danger btn-md" onclick="refreshAll();">
+                	<i class="fa fa-refresh" aria-hidden="true"></i> Restart
+                </a>
+
+
+			</div>
+
+			<div id="objectiveValue" class="col-lg-3 col-md-3 col-sm-6">
+				<h4>Coverage Level: <span id="objectiveDisplay"></span> </h4>
+			</div>
+
+
+			<div id="debugModeMenu" class="col-lg-2 col-md-2">
+				<a id="debugModeButton" class="btn btn-danger btn-md" onclick=" initiateDebugging();">
+                	<i class="fa fa-play" aria-hidden="true"></i> Debug
+                </a>
+			</div>
+
+			<div class="col-lg-3 col-md-3"> <!-- simulation time -->
+            		<div id="simulationTime" class="input-group">
+            			<h4>Simulation Time: <span id="simulationTimeDisplay"></span> </h4>
+            		</div>	
+			</div>
+
+		</div>
+	</div>
+
+
+	<dir class="container">
+		<div class="row">
+			<div id=canvasHolder class="col-lg-7 col-md-7">
+				<!-- <p id="p5Canvas"><canvas id="defaultCanvas0" width="1200" height="1000" style="width: 600px; height: 600px;"></canvas></p> -->
+			</div>
+
+			<div id="blankColumn" class="col-lg-1 col-md-1">
+				
+			</div>
+
+			<div class="col-lg-5 col-md-4 col-sm-6 col-xs-8">
+
+				<div class="row">
+		            
+
+		            <div class="">
+		            	
+		            	<div class="input-group">
+		            		
+		            		<h4>Number of Agents: <span id="numberOfAgents"></span>;   Selected Agent:
+		            			<select id="particleSelectDropdown" onchange="particleSelectDropdownEvent()"></select></h4>
+		            		
+	                			
+		            		<div class="input-group-btn">
+
+		            			<button class="btn btn-success" type="button" onclick="addAgent();">
+		    						<i class="fa fa-plus" aria-hidden="true"></i>
+		    					</button>
+
+		    					<button class="btn btn-danger" type="button" onclick="removeAgent();">
+		    						<i class="fa fa-minus" aria-hidden="true"></i>
+		    					</button>
+		    					
+		    					
+		  					</div>
+						</div>
+		            </div>
+
+
+		            <div class="">
+		            	
+		            	<div class="input-group">
+		            		<div class="form-check">
+		            			<h4>
+		            				Display Coverage Density: <input class="form-check-input" type="checkbox" value="" checked id="displayCoverageDensity">; 
+		          					Real Agents: <input class="form-check-input" type="checkbox" value="" id="displayPhysicalAgents">
+		            			</h4>
+		            		</div>		
+						</div> 
+		            </div>
+
+
+		            <!-- <div class="">
+		            	
+		            	<div class="input-group">
+		            		<div class="form-check">
+		            			<h4>Add Physical Agents: <input class="form-check-input" type="checkbox" value="" id="displayPhysicalAgents"></h4>
+		            		</div>		
+						</div> 
+		            </div> -->
+
+		            <!-- simulation time -->
+		            <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8"> 
+	            		<div id="simulationTime" class="input-group">
+	            			<h4>Simulation Time: <span id="simulationTimeDisplay"></span> </h4>
+	            		</div>	
+					</div> -->
+
+					<div class="">
+		            	
+			            <div class="slidecontainer">
+
+			            		<h4>Sensing Range: <span id="sensingRangeDisplay"></span></h4>
+			            		<input type="range" min="1" max="600" value="200" class="slider" id="sensingRange" onchange="sensingRangeChanged(this.value)">
+
+			            		<h4>Sensing Decay: <span id="sensingDecayDisplay"></span></h4>
+			            		<input type="range" min="0" max="50" value="12" class="slider" id="sensingDecay" onchange="sensingDecayChanged(this.value)">
+								
+
+			            		<h4>[Cost / Sensing] Ratio: <span id="agentCostRatioDisplay"></span>; (Cost &alpha;<sub>i</sub>: <span id="agentCostDisplay"></span>) </h4>
+			            		<input type="range" min="0" max="3000" value="1000" class="slider" id="agentCostRatio" onchange="agentCostRatioChanged(this.value)">
+								
+								<h4>Normalization Factor <span style="text-decoration: overline;">&beta;</span>: <span id="normalizationFactorDisplay"></span>; (PGD weight &beta;: <span id="weightPGDDisplay"></span>) </h4>
+			            		<input type="range" min="0" max="999999" value="500000" class="slider" id="normalizationFactor" onchange="normalizationFactorChanged(this.value)">
+
+								<h4>Discretization Level (Px.): <span id="descretizationLevelDisplay"></span></h4><input type="range" min="1" max="25" value="10" class="slider" id="descretizationLevelVal">
+
+			            		<h4 id="stepSizeDisplayLabel">Step Size: <span id="stepSizeDisplay"></span></h4>
+			            		<input type="range" min="0" max="15" value="5" class="slider" id="stepSize">
+
+			            </div>
+			        	
+	            	</div>
+
+					
+
+					<div class="">
+	            		<div class="input-group">
+	            			<h4>Step Size Multiplier: <span id="stepSizeMultiplierDisplay"></span></h4>
+	            			<select class="form-control custom-select" id="stepSizeMultiplier">
+	            				<option value="1">1</option>
+						    	<option selected value="0.1">0.1</option>
+						    	<option value="0.01">0.01</option>
+						  	</select>   	
+						</div>
+					</div>
+
+
+					<div class="">
+			            <!-- <div class="input-group">
+							<h4>PGD Weight (&beta;):</h4> <input type="text" class="form-control" id="weightPGDDisplay" value = "-15000" onchange="weightPGDChanged()">
+	                	</div> -->
+		            	<!-- <div class="col col-lg-7 col-md-7">
+			            	<div id="boostingButtons2" class="input-group">
+			            		<h4>Boosting Method: </h4>
+			            		<select class="form-control custom-select" id="boostingMethod" onchange="boostingMethodChanged()">
+		            				<option selected value="0">None</option>
+							    	<option value="1">P - Boosting</option>
+							    	<option value="2">Neighbor - Boosting </option>
+							    	<option value="3">Phi - Boosting</option>
+							    	<option value="4">Random Purtubing</option>
+							    	<option value="5">V - Boosting</option>
+							    	<option value="6">Arc - Boosting</option>
+							    	<option value="7">VA - Boosting</option>
+							  	</select> 
+							</div>
+						</div>
+
+						<div class="col col-lg-3 col-md-3" id="boostingParameterFields">
+							<h4 id="boostingK"></h4> <input type="text" class="form-control" onchange="boostingParameterChanged()" id="boostingParameterK">
+	                	</div>
+
+	                	<div class="col col-lg-2 col-md-2" id="boostingParameterFields">
+							<h4 id="boostingGamma"></h4> <input type="text" class="form-control" onchange="boostingParameterChanged()" id="boostingParameterY">
+	                	</div> -->
+
+		            </div>
+	            	
+	            </div>
+
+	        </div>
+			
+		</div>
+	</div>
+
+
+	<div class="container">
+
+		<div class="row">
+
+			<div id="submodularityMenu" class="form-group form-horizontal">
+
+      			
+	    		<div class="col col-lg-2 col-md-3 col-sm-3">
+	    			<div id="submodularityButtons"  class="input-group">
+						<h4>Greedy Methods, n:</h4>
+	            			<input type="text" class="form-control" id="numOfCandidatesSubmodularity" value="100">
+		            </div>
+				</div>
+
+				<div class="col col-lg-2 col-md-3 col-sm-3">
+	    			<div id="submodularityButtons"  class="input-group">
+						<div class="input-group-btn">
+	            			<h4>Discretized Points:</h4>
+	            			<button class="btn btn-primary" type="button" onclick="generateCandidatesBtnFcn();">Generate</button>
+	    					<button id="solveGreedyButton" class="btn btn-success" type="button" onclick="readjustCandidatesStart();">Re-adjust</button>
+	    					<!-- <button id="deployAgentsButton" class="btn btn-danger" type="button" onclick="deployAgentsButtonFunction();">Deploy Agents</button> -->
+	  					</div>
+		            </div>
+				</div>
+
+				<div class="col col-lg-3 col-md-3 col-sm-3">
+	    			<div id="submodularityButtons"  class="input-group">
+						<div class="input-group-btn">
+							<h4>Centralized Greedy</h4>
+	    					<button id="solveGreedyButton" class="btn btn-success" type="button" onclick="solveCentralizedGreedyBtnFcn();">Gen. G.</button>
+	    					<button id="solveGreedyButton" class="btn btn-danger" type="button" onclick="solveCentralizedGreedyContinuousBtnFcn();"><i class="fa fa-play" aria-hidden="true"></i></button>
+	    					<button id="deployAgentsButton" class="btn btn-primary" type="button" onclick="solveCentralizedStochasticGreedyBtnFcn();">Stoch. G.(&epsilon;)</button>
+  						</div>
+  						<h4>&epsilon;</h4>
+  						<input type="text" class="form-control" id="epsilonStochasticGreedy" value="0.27">
+		            </div>
+				</div>
+
+
+				<div class="col col-lg-3 col-md-3 col-sm-3">
+	    			<div id="submodularityButtons"  class="input-group">
+						<div class="input-group-btn">
+							<h4>Distributed Greedy</h4>
+	    					<button id="solveGreedyButton" class="btn btn-success" type="button" onclick="solveDistributedRandomizedGreedyBtnFcn();">Rand. G.(m)</button>
+	    					<button id="deployAgentsButton" class="btn btn-primary" type="button" onclick="solveDistributedSequentialGreedyBtnFcn();">Seqen. G.</button>
+  						</div>
+  						<h4>m</h4>
+    					<input type="text" class="form-control" id="mRandomizedGreedy" value="5">
+		            </div>
+				</div>
+
+
+				<div class="col col-lg-2 col-md-2 col-sm-2">
+	    			<div id="submodularityButtons"  class="input-group">
+						<div class="input-group-btn">
+							<h4>Deploy</h4>
+	    					<!-- <button id="solveGreedyButton" class="btn btn-success" type="button" onclick="solveCentralizedGreedyBtnFcn();">Solve</button> -->
+	    					<button id="solveGreedyButton" class="btn btn-primary" type="button" onclick="calculateApproxFactorsBtnFcn();">Approx.F.</button>
+	    					<button id="deployAgentsButton" class="btn btn-danger" type="button" onclick="deployAgentsBtnFcn();">Deploy</button>
+
+  						</div>
+		            </div>
+				</div>
+
+
+      		</div>
+
+		</div>
+
+	</div>
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div id="StepSizeMenu" class="form-group form-horizontal">
+
+				<div class="col col-lg-3 col-md-6">
+					<h4>Decentralized Boosting Method:</h4>
+					<select class="form-control" id="decentralizedBoostingMethod" onchange="decentralizedBoostingMethodDropdownEvent()">
+						<option value="0">Centralized</option>
+					    <option selected value="1">Decentralized</option>
+	      			</select>					
+      			</div>
+
+      			<div class="col col-lg-3 col-md-6">
+      				<h4>Variable Steps: <input class="form-check-input" type="checkbox" value="" id="variableStepSizeCB" onclick="variableStepSizeModeChanged()">; (-)ve Steps <input class="form-check-input" type="checkbox" value="" checked id="negativeStepSizeCB">; 
+      				</h4>
+    					
+					<button class="btn btn-success" type="button" onclick="tuneLipschitzConstants();">
+						Est. K<sub>1</sub> Globally <i class="fa fa-calculator" aria-hidden="true"></i>
+					</button>
+      			</div>
+
+
+            	<div class="col col-lg-2 col-md-2">
+            		
+	          		<h4>Auto Tune K_1 <input class="form-check-input" type="checkbox" checked value="" id="autoTuneLipschitzMode" onclick="autoTuneLipschitzModeChanged()">;</h4>
+                	
+                	<button class="btn btn-success" type="button" onclick="tuneLipschitzConstantsLocally();">
+						Est. K<sub>1</sub> Locally <i class="fa fa-calculator" aria-hidden="true"></i>
+					</button>
+                	
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8" id="noMargin1" >
+	            	
+		            <div class="col col-lg-9 col-md-9" >
+	            		<h4>Dim. Step (&alpha;<sub>k</sub>=K<sub>0</sub>/k<sup>r</sup>): <input class="form-check-input" type="checkbox" value="" id="diminishingStepSizeCB" onclick="diminishingStepSizeModeChanged()">; r: <span id="diminishingStepSizerDisplay"></span>
+	            		<input type="range" min="100" max="200" value="125" class="slider" id="diminishingStepSizerSlider"></h4>
+		          	</div>
+		          		
+		          	<div class="col col-lg-3 col-md-3">
+		          		<h4>K<sub>0</sub>:</h4> <input type="text" class="form-control" id="diminishingStepSizeInitialStep" onchange="diminishingStepSizeModeChanged()">
+		          	</div>
+
+            	</div>
+
+            </div>
+
+		</dir>
+	</dir>
+
+	<div class="container">
+
+		<div class="row">
+			<div id="obstacleMenu" class="form-group form-horizontal">
+
+				<div class="col col-lg-3 col-md-6">
+                	<h4>Load Obstacle Setup:</h4>
+	                <select class="form-control col col-lg-2" id="obstacleSetupDropdown" onchange="obstacleSetupDropdownEvent()">
+	                	<option value="0">Blank</option>
+					    <option value="1">General</option>
+					    <option value="2">Room</option>
+					    <option selected value="3">Maze</option>
+					    <option value="4">Narrow</option>
+	      			</select>
+      			</div>
+
+
+				<div class="col col-lg-3 col-md-6">
+                	<h4>Select Obstacle:</h4>
+	                <select class="form-control col col-lg-2" id="obstacleDropdown" onchange="obstacleDropdownEvent()">
+	      			</select>
+      			</div>
+
+
+      			<div class="col col-lg-3 col-md-6">
+      				<h4>Add New Obstacle:</h4> 
+
+      				<div class="col col-lg-6 col-md-6 col-sm-6">
+      				<button class="btn btn-success" id="addObstacleButton" type="button" onclick="addObstacle();">
+	    						<i class="fa fa-play" aria-hidden="true"> Add New</i>
+	    			</button>
+	    			</div>
+
+	    			<div class="col col-lg-6 col-md-6 col-sm-6">
+      				<button class="btn btn-danger" id="addObstacleButton" type="button" onclick="stopAddingObstacle();">
+	    						<i class="fa fa-stop" aria-hidden="true"> Finish It</i>
+	    			</button>
+	    			</div>		
+
+				</div>
+
+
+      			<div class="col col-lg-3 col-md-6" id="obstacleCoordinatesDisplayDiv">
+					<h4>Obstacle Coordinates:</h4> <input type="text" class="form-control" id="obstacleCoordinatesDisplay" onchange="obstacleTextInput()">
+                </div>
+
+
+            </div>
+
+		</dir>
+
+	</div>
+
+
+	
+
+	<div class="container">
+
+		<div class="row">
+            	
+            <div id="DataMenu" class="form-group form-horizontal">
+
+				<div class="col col-lg-6 col-md-6">
+                	<h4>Select Data:</h4>
+	                <select class="form-control col col-lg-2" id="selectDataToSaveDropdown" onchange="selectDataToSaveDropdownEvent()">
+	                	<option selected value="0">Console</option>
+					    <option value="1">Positions</option>
+					    <option value="2">Derivatives</option>
+					    <option value="3">Beta*</option>
+	      			</select>
+      			</div>
+
+
+      			<div class="col col-lg-6 col-md-6">
+
+      				<div class="col col-lg-3 col-md-4 col-sm-6">
+      					<h4>Save Data: <input class="form-check-input" type="checkbox" value="" id="saveDataEnabled"> </h4> 
+	      				<button class="btn btn-success" type="button" onclick="saveTextAsFile();">
+		    						<i class="fa fa-play" aria-hidden="true"> Save Data</i>
+		    			</button>
+	    			</div>
+
+	    			<div class="col col-lg-3 col-md-4 col-sm-6">
+	    				<h4>Plot Data: <input class="form-check-input" type="checkbox" value="" id="plotDataEnabled"> </h4> 
+	    				<a href="plot.html" target="_blank">
+		      				<button class="btn btn-danger" type="button" onclick="plotButtonClicked();">
+			    						<i class="fa fa-stop" aria-hidden="true">Plot Data</i>
+			    			</button>
+			    		</a>
+	    			</div>
+
+	    			<div class="col col-lg-6 col-md-4 col-sm-6">
+	                	<div id="trajectoryButtons" class="input-group">
+		            		<h4>Trajectory: </h4>
+		            		<div class="input-group-btn">
+		            			<button class="btn btn-success" type="button" onclick="pickWayPointsButtonFunction();">Pick Points</button>
+		    					<button id="trajectoryFollowButton" class="btn btn-danger" type="button" onclick="trajectoryFollowButtonFunction();">Follow</button>
+		  					</div>
+						</div>
+      				</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		
+
+
+		<div class="row">
+
+			<div id="PSOMenu" class="form-group form-horizontal">
+
+
+      			<div class="col col-lg-6 col-md-6 col-sm-6">
+					<div id="trajectoryButtons" class="input-group">
+						<h4>Particle Swarm Optimization: </h4>
+						<div class="input-group-btn">
+							<button class="btn btn-primary" type="button" onclick="solvePSO();"><i class="fa fa-play" aria-hidden="true"> Solve PSO</i>
+		    				</button>
+		      				<button class="btn btn-success" type="button" onclick="playPSO();"><i class="fa fa-play" aria-hidden="true"> Play</i>
+			    			</button>
+			    			<button class="btn btn-danger" type="button" onclick="stopPSO();"><i class="fa fa-stop" aria-hidden="true"> Stop</i>
+			    			</button>
+			    		</div>
+		    		</div>
+	    		</div>
+
+	    		<div class="col col-lg-6 col-md-6 col-sm-6">
+	    			<div class="input-group">
+			    		<div class="col col-lg-2 col-md-1">
+			    			<div class="input-group-2">
+							<h4>N <input type="text" class="form-control" id="numOfParticlesPSO" value="50"></h4>
+							</div>
+		                </div>
+
+		                <div class="col col-lg-2 col-md-1">
+		                	<div class="input-group-2">
+							<h4>&Phi;<sub>P</sub> <input type="text" class="form-control" id="PSOPhiP" value="-0.05"></h4>
+							</div>
+		                </div>
+		                
+		                <div class="col col-lg-1 col-md-1">
+		                </div>
+
+		                <div class="col col-lg-2 col-md-1">
+		                	<div class="input-group-2">
+							<h4>&Phi;<sub>G</sub>  <input type="text" class="form-control" id="PSOPhiG" value="-0.5"></h4>
+							</div>
+		                </div>
+
+		                <div class="col col-lg-1 col-md-1">
+		                </div>
+
+		                <div class="col col-lg-2 col-md-1">
+		                	<div class="input-group-2">
+							<h4>W<input type="text" class="form-control" id="PSOW" value="5"></h4>
+							</div>
+		                </div>
+
+		                <div class="col col-lg-2 col-md-1">
+		                	<div class="input-group-2">
+							<h4>N<sub>it</sub>  <input type="text" class="form-control" id="PSONit" value="100"></h4>
+							</div>
+		                </div>
+		            </div>
+				</div>
+
+      		</div>
+
+		</div>
+
+
+
+		<!-- plotting -->
+		<!-- <div class="row">
+			<div class="container">
+				<div id="myDiv" class="col-lg-12"></div>
+			</div>
+		</div> -->
+		
+
+	</div>
+
+
+
+	
+	
+
+
+
+
+	<!-- just have these two lines  all the time-->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+</body>
+
+
+</html>
+
+
