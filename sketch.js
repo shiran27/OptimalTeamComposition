@@ -1471,7 +1471,7 @@ function draw() {
 
 
         var normalizationFactor = Number(document.getElementById("normalizationFactor").value)/1000000;
-        document.getElementById("normalizationFactorDisplay").innerHTML = normalizationFactor;
+        document.getElementById("normalizationFactorDisplay").innerHTML = normalizationFactor.toFixed(3);
         var sumNum = 0; 
         var sumDen = 0;
         for(var i = 0; i<particleShadows.length; i++){
@@ -1481,7 +1481,7 @@ function draw() {
         weightPGD = -1*(sumNum/sumDen)*(normalizationFactor/(1-normalizationFactor));
         // print("weightPGD: "+weightPGD);
         // print("weightPGD*alpha_i: "+weightPGD*agentCostRatio*particleShadows[selectedAgentIndex-1].sensingCapacity);
-        document.getElementById("weightPGDDisplay").innerHTML = Math.round(weightPGD*1000)/1000;
+        document.getElementById("weightPGDDisplay").innerHTML = Math.round(-1*weightPGD*1000)/1000;
     }
 
 

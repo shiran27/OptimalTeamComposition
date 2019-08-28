@@ -1,0 +1,1123 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is",
+				"isPermanent"
+			],
+			[
+				"get",
+				"getPathID"
+			],
+			[
+				"save",
+				"saveSketch"
+			],
+			[
+				"temp",
+				"numberOfUpdateStepsCountTemp"
+			],
+			[
+				"boosing",
+				"boostingMode"
+			],
+			[
+				"boos",
+				"boostingMethod"
+			],
+			[
+				"initi",
+				"initiateForcedModeSwitch"
+			],
+			[
+				"swit",
+				"modeSwitchingThresholdAlpha"
+			],
+			[
+				"stepSize",
+				"stepSize"
+			],
+			[
+				"count",
+				"numberOfUpdateStepsCount"
+			],
+			[
+				"stepSi",
+				"stepSizeSelectionMethod"
+			],
+			[
+				"ar",
+				"arcBoostingInitiated"
+			],
+			[
+				"agent",
+				"agentCount"
+			],
+			[
+				"uncer",
+				"uncertaintyRate"
+			],
+			[
+				"un",
+				"uncertaintyRate"
+			],
+			[
+				"res",
+				"resAgent"
+			],
+			[
+				"next",
+				"nextTarget"
+			],
+			[
+				"resi",
+				"residingAgents"
+			],
+			[
+				"push",
+				"pushResidingAgentAway"
+			],
+			[
+				"boosting",
+				"boostingMethod"
+			],
+			[
+				"ini",
+				"initiateForcedModeSwitch"
+			],
+			[
+				"boostingMode",
+				"boostingMethodChanged"
+			],
+			[
+				"mode",
+				"modeSwitchingThresholdAlpha"
+			],
+			[
+				"col-l",
+				"col-lg-6"
+			],
+			[
+				"col-lg",
+				"col-lg-6"
+			],
+			[
+				"bor",
+				"border-right"
+			],
+			[
+				"thresho",
+				"thresholdButton"
+			],
+			[
+				"th",
+				"threshold"
+			],
+			[
+				"cyc",
+				"cycleAssignments"
+			],
+			[
+				"tra",
+				"transientPaths"
+			],
+			[
+				"Assi",
+				"assignmentSolution"
+			],
+			[
+				"ass",
+				"assignmentSolution"
+			],
+			[
+				"mini",
+				"minimumPathsFoundAgentToCycles"
+			],
+			[
+				"minimum",
+				"minimumPathsFoundAgentToCycles"
+			],
+			[
+				"minimumDistances",
+				"minimumDistancesFoundToCycles"
+			],
+			[
+				"min",
+				"minDistTarInCycC"
+			],
+			[
+				"tareg",
+				"Targets"
+			],
+			[
+				"mii",
+				"minimumDistancesFound"
+			],
+			[
+				"sens",
+				"sensitivity"
+			],
+			[
+				"glo",
+				"globalSensitivityMagnitude"
+			],
+			[
+				"simula",
+				"simulationMode"
+			],
+			[
+				"abs",
+				"rowAbsoluteSum"
+			],
+			[
+				"thresholdSens",
+				"thresholdSensitivity"
+			],
+			[
+				"row",
+				"rowAbsoluteSum"
+			],
+			[
+				"thresholdSensitivity",
+				"thresholdSensitivityMagnitudes"
+			],
+			[
+				"threshol",
+				"thresholdSensitivities_"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"wor",
+				"worstCostFoundSoFar"
+			],
+			[
+				"best",
+				"bestThresholdsFoundSoFar"
+			],
+			[
+				"bes",
+				"bestThresholdsFoundSoFar"
+			],
+			[
+				"inf",
+				"Infinity"
+			],
+			[
+				"net",
+				"netAgentSensingRate"
+			],
+			[
+				"simu",
+				"simulationMode"
+			],
+			[
+				"comp",
+				"computeNeglectedTargetCost"
+			],
+			[
+				"com",
+				"computeNeglectedTargetCost"
+			],
+			[
+				"mean",
+				"meanUncertainty"
+			],
+			[
+				"allowe",
+				"allowedList"
+			],
+			[
+				"allow",
+				"allowedList"
+			],
+			[
+				"clone",
+				"cloneFrom"
+			],
+			[
+				"eff",
+				"effectOfAbandoningInternalTarget"
+			],
+			[
+				"cycle",
+				"cycles"
+			],
+			[
+				"offer",
+				"offersList"
+			],
+			[
+				"cost",
+				"costOfAbandoning"
+			],
+			[
+				"itera",
+				"iterationCount"
+			],
+			[
+				"ind",
+				"ind1"
+			],
+			[
+				"allo",
+				"allowedTargetList"
+			],
+			[
+				"inde",
+				"indexOf"
+			],
+			[
+				"max",
+				"maxGain3"
+			],
+			[
+				"exter",
+				"externalTargetIndex"
+			],
+			[
+				"index",
+				"indexList"
+			],
+			[
+				"to",
+				"toFixed"
+			],
+			[
+				"neglecte",
+				"neglectedTargetCost"
+			],
+			[
+				"mea",
+				"meanUncertainty"
+			],
+			[
+				"compu",
+				"computeNeglectedTargetCost"
+			],
+			[
+				"sq",
+				"sqrt"
+			],
+			[
+				"R",
+				"RGCComputingModeCount"
+			],
+			[
+				"RGC",
+				"RGCComputingMode"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"number",
+				"numberOfKMeansIterations"
+			],
+			[
+				"num",
+				"numOfKMeansIterations"
+			],
+			[
+				"taregt",
+				"targetID"
+			],
+			[
+				"assi",
+				"assignmentCost"
+			],
+			[
+				"distance",
+				"distanceToAssignedMean"
+			],
+			[
+				"assign",
+				"assignmentCost"
+			],
+			[
+				"assin",
+				"assignedCluster"
+			],
+			[
+				"dis",
+				"distanceToNewMeanComponent"
+			],
+			[
+				"cluster",
+				"clusteredPoints"
+			],
+			[
+				"conver",
+				"convergedMeanCount"
+			],
+			[
+				"new",
+				"newMean"
+			],
+			[
+				"data",
+				"dataCount"
+			],
+			[
+				"targets",
+				"targets"
+			],
+			[
+				"Data",
+				"dataPoints"
+			],
+			[
+				"sor",
+				"sortedEigenvalues"
+			],
+			[
+				"ei",
+				"eigenvalues"
+			],
+			[
+				"la",
+				"lambda"
+			],
+			[
+				"laplacian",
+				"Laplacian"
+			],
+			[
+				"eig",
+				"eigDecomp"
+			],
+			[
+				"stepSiz",
+				"stepSize"
+			],
+			[
+				"simi",
+				"similarityMatrix"
+			],
+			[
+				"comu",
+				"computeSimilarityMatrix"
+			],
+			[
+				"ne",
+				"neighborhoodWidthForClusteringDisplay"
+			],
+			[
+				"spe",
+				"spectralClusteringMethod"
+			],
+			[
+				"sp",
+				"spectralClusteringMethod"
+			],
+			[
+				"Neighborh",
+				"neighborhoodWidthForClusteringChanged"
+			],
+			[
+				"neigh",
+				"neighborhoodWidthForClustering"
+			],
+			[
+				"cons",
+				"consolePrint"
+			],
+			[
+				"path",
+				"pathList"
+			],
+			[
+				"d",
+				"dummyTour"
+			],
+			[
+				"minn",
+				"minDistanceTarget"
+			],
+			[
+				"unvisi",
+				"unvisitedTargets"
+			],
+			[
+				"unv",
+				"unvisitedTargets"
+			],
+			[
+				"pred",
+				"predecessors"
+			],
+			[
+				"start",
+				"startNode"
+			],
+			[
+				"reco",
+				"recorrectCycleErrors"
+			],
+			[
+				"targ",
+				"targetList"
+			],
+			[
+				"maximum",
+				"maximumPathLengthChanged"
+			],
+			[
+				"maximy",
+				"maximumPathLengthDisplay"
+			],
+			[
+				"add",
+				"addATargetAt"
+			],
+			[
+				"conne",
+				"connectedViaAuxTargetsBwd"
+			],
+			[
+				"conn",
+				"connectedViaAuxTargetsBwd"
+			],
+			[
+				"sea",
+				"search"
+			],
+			[
+				"negle",
+				"neglectedTargetInfo"
+			],
+			[
+				"neg",
+				"neglectedTargetInfo"
+			],
+			[
+				"neglected",
+				"neglectedTargetInfo"
+			],
+			[
+				"negl",
+				"neglectedTargetList"
+			],
+			[
+				"neglect",
+				"neglectedTargetCost"
+			],
+			[
+				"tare",
+				"targetCovered"
+			],
+			[
+				"in",
+				"includes"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "sketch.js",
+			"settings":
+			{
+				"buffer_size": 70622,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "particle.js",
+			"settings":
+			{
+				"buffer_size": 172715,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "obstacle.js",
+			"settings":
+			{
+				"buffer_size": 9294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "point2.js",
+			"settings":
+			{
+				"buffer_size": 11894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mathTools.js",
+			"settings":
+			{
+				"buffer_size": 87839,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "simulation.js",
+			"settings":
+			{
+				"buffer_size": 44006,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 22022,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 3194,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V5/OptimalTeamComposition/style.css",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V5/OptimalTeamComposition/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/libraries/lap.js",
+		"/D/Downloads/lap-jv-master/lap-jv-master/lap.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/libraries/numeric.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV33/mathTools.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/libraries/jquery-3.3.1.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV35/CoverageControl/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV35/CoverageControl/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV35/CoverageControl/sketch.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/target.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/sketch.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/simulation.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/agent.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/plot.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/style.css",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/path.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/point2.js",
+		"/D/BU/Spring 2019/DES SE 733/Project/SimulationJavascript/V3/HybridSystemInManufacturing/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV34/index.html",
+		"/C/Users/shira/AppData/Local/Temp/Rar$DRa41692.40596/tsp-js-master/salesman.js",
+		"/D/Downloads/tsp-js-master/tsp-js-master/salesman.js",
+		"/D/Downloads/tsp-js-master/tsp-js-master/index.html",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/IPAForQueueingSystemAnalysis/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V2/.git/COMMIT_EDITMSG",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/target.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/style.css",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/simulation.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/sketch.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/point2.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/path.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/agent.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/plot.js",
+		"/C/Users/shira/Desktop/gitStartup/temp.txt",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/plot.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV34/style.css",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV34/plot.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/old codes/V4/sketch.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/old codes/V4/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV33/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V4/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV34/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV34/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV34/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV34/style.css",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV33/simulation.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV33/index.html",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV33/particle.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/Agent.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/Target.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/p5.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/CoverageV33/libraries/p5.play.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/main.js",
+		"/D/BU/Research/persistent  monitoring/JavascriptSimulation/V1/interface.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/main.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/style.css",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/index.html",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/interface.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/V1/plot.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V4/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V4/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V4/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V4/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/style.css",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/event.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/point2.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V3/obstacle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/point2.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/event.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/obstacle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V2/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V1/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V1/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V1/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V1/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/V1/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/comp/particleCS.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/comp/sketchCS.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/comp/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/comp/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/comp/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/index.html",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/index.html",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/plot.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/plot.html",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/simulation.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/sketch.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW6/SimpleQue/CoverageV33/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/style.css",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/obstacle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageCDC2019Paper3/sketch.js",
+		"/D/BU/Spring 2019/DES SE 733/hw/HW5/tutorialApp/requiredMCRProducts.txt",
+		"/D/Downloads/Ax/00README.txt",
+		"/D/BU/Spring 2019/DES SE 733/hw/hw3/ProjectQueingSystem/QueSystem/PartE2.txt",
+		"/D/BU/Spring 2019/DES SE 733/hw/hw3/ProjectQueingSystem/QueSystem/PartE1.txt",
+		"/D/Downloads/10.2307_2319163.txt",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV33/point2.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/style.css",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/simulation.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/particle.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/sketch.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/mathTools.js",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV32Paper/point2.js",
+		"/D/BU/Research/Docs/Paper 1/Results/Convergence/SimulationData (66).txt",
+		"/D/BU/Research/Docs/Paper 1/Results/Convergence/SimulationData (65).txt",
+		"/D/BU/Research/Docs/Paper 1/Results/Convergence/SimulationData (64).txt",
+		"/D/Downloads/SimulationData (60).txt",
+		"/D/Downloads/SimulationData (62).txt",
+		"/D/Downloads/SimulationData (63).txt",
+		"/D/Downloads/SimulationData (59).txt",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV31/style.css",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV31/index.html",
+		"/D/BU/Research/Coverage-in-P5JS-master/CoverageV31/simulation.js"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"beta"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "sketch.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 70622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								88,
+								88
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "particle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 172715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "obstacle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "point2.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "mathTools.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 87839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "simulation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1480,
+								1480
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": ".project.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 128.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
