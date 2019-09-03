@@ -1461,6 +1461,14 @@ function printPointPSO(position,colorValue,radius){
 
 ////////////////////////// Submodularity Related stuff
 
+function addCustomCandidatesBtnFcn(){
+	for(var i = 0; i<particleShadows.length; i++){
+
+		submodularityCandidates.push(particleShadows[i].position);
+		
+	}
+}
+
 function generateCandidatesBtnFcn(){
 
 	consolePrint("Solving Coverage Control Problem Using Greedy Algorithm: Started");
@@ -1840,6 +1848,8 @@ function calculateApproxFactorsBtnFcn(){
 					}
 				}
 				var chosenClassIndex = subCostArray.indexOf(subCostArray.reduce(function(a, b){return Math.max(a, b);}));
+				print('Debug '+chosenClassIndex);
+				print(submodularityCandidates[j]);
 				addClassifiedAgentToPoint(classification[chosenClassIndex][0], submodularityCandidates[j].x,submodularityCandidates[j].y);
 				classArray[j] = chosenClassIndex;
 

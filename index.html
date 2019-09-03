@@ -123,20 +123,28 @@
 
 			</div>
 
-			<div id="objectiveValue" class="col-lg-3 col-md-3 col-sm-6">
-				<h4>Coverage Level: <span id="objectiveDisplay"></span> </h4>
+			<div id="objectiveValue" class="col-lg-2 col-md-2 col-sm-2">
+				<h4>Coverage: <span id="objectiveDisplay"></span> </h4>
+			</div>
+
+			<div id="costObjectiveValue" class="col-lg-2 col-md-2 col-sm-2">
+				<h4>Cost: <span id="costObjectiveDisplay"></span></h4>
+			</div>
+
+			<div id="overallObjectiveValue" class="col-lg-2 col-md-2 col-sm-2">
+				<h4>Objective: <span id="overallObjectiveDisplay"></span> </h4>
 			</div>
 
 
-			<div id="debugModeMenu" class="col-lg-2 col-md-2">
+			<div id="debugModeMenu" class="col-lg-1 col-md-1">
 				<a id="debugModeButton" class="btn btn-danger btn-md" onclick=" initiateDebugging();">
                 	<i class="fa fa-play" aria-hidden="true"></i> Debug
                 </a>
 			</div>
 
-			<div class="col-lg-3 col-md-3"> <!-- simulation time -->
+			<div class="col-lg-1 col-md-1"> <!-- simulation time -->
             		<div id="simulationTime" class="input-group">
-            			<h4>Simulation Time: <span id="simulationTimeDisplay"></span> </h4>
+            			<h4>Time: <span id="simulationTimeDisplay"></span> </h4>
             		</div>	
 			</div>
 
@@ -227,7 +235,7 @@
 			            		<input type="range" min="0" max="3000" value="1000" class="slider" id="agentCostRatio" onchange="agentCostRatioChanged(this.value)">
 								
 								<h4>Normalization Factor (w<sub>1</sub>): <span id="normalizationFactorDisplay"></span>; (PGD weight &beta;: <span id="weightPGDDisplay"></span>) </h4>
-			            		<input type="range" min="0" max="999999" value="500000" class="slider" id="normalizationFactor" onchange="normalizationFactorChanged(this.value)">
+			            		<input type="range" min="0" max="999999" value="575000" class="slider" id="normalizationFactor" onchange="normalizationFactorChanged(this.value)">
 
 								<h4>Discretization Level (Px.): <span id="descretizationLevelDisplay"></span></h4><input type="range" min="1" max="25" value="10" class="slider" id="descretizationLevelVal">
 
@@ -309,7 +317,8 @@
 						<div class="input-group-btn">
 	            			<h4>Discretized Points:</h4>
 	            			<button class="btn btn-primary" type="button" onclick="generateCandidatesBtnFcn();">Generate</button>
-	    					<button id="solveGreedyButton" class="btn btn-success" type="button" onclick="readjustCandidatesStart();">Re-adjust</button>
+	            			<button id="addCustomCandidatesButton" class="btn btn-danger" type="button" onclick="addCustomCandidatesBtnFcn();"><i class="fa fa-plus"></i></button>
+	    					<button id="solveGreedyButton" class="btn btn-success" type="button" onclick="readjustCandidatesStart();">Adjust</button>
 	    					<!-- <button id="deployAgentsButton" class="btn btn-danger" type="button" onclick="deployAgentsButtonFunction();">Deploy Agents</button> -->
 	  					</div>
 		            </div>
@@ -422,10 +431,10 @@
 				<div class="col col-lg-3 col-md-6">
                 	<h4>Load Obstacle Setup:</h4>
 	                <select class="form-control col col-lg-2" id="obstacleSetupDropdown" onchange="obstacleSetupDropdownEvent()">
-	                	<option value="0">Blank</option>
+	                	<option selected value="0">Blank</option>
 					    <option value="1">General</option>
 					    <option value="2">Room</option>
-					    <option selected value="3">Maze</option>
+					    <option value="3">Maze</option>
 					    <option value="4">Narrow</option>
 	      			</select>
       			</div>

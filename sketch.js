@@ -243,6 +243,9 @@ var particleSelectDropdownUsed = 0;
 var agentCostRatio = 1;
 
 
+var tBoostMode = 0;
+
+
 function setup() {
 
 	pixelDensity(1);
@@ -303,9 +306,34 @@ function setup() {
 
     consolePrint("Interface Loading Finished.");
     
+
+
+    // P3
     
+    startRoutine1();
+
 }
 
+
+function doubleClickedFunction() {
+    print("Double clicked")
+    var tolence = 0.001;
+    for(var i = 0; i<particleShadows.length; i++){
+        var mouseP = new Point2(mouseX,mouseY);
+        if(distP2(mouseP,particleShadows[i].position)<10){
+
+            var nextT =  1 - particleShadows[i].nextTToBe;
+            if(nextT > 1){
+                nextT =  1;
+            }
+            else if (nextT < tolence){
+                nextT = tolence;
+            }
+            particleShadows[i].t = nextT;
+        
+        }
+    }
+}
 
 
 function initiateDebugging(){
@@ -390,6 +418,9 @@ function start(){
     document.getElementById("alertBox").style.display = 'none'; 
     startButtonClicked  = false;
     executionTime = millis();
+
+
+
 }
 
 
@@ -1359,7 +1390,7 @@ function normalizationFactorChanged(val){
         sumNum = sumNum + particleShadows[i].sensingCapacity;
         sumDen = sumDen + particleShadows[i].agentCostRatio*particleShadows[i].sensingCapacity
     }
-    weightPGD = -1*(sumNum/sumDen)*(normalizationFactor/(1-normalizationFactor));
+    weightPGD = -1*(sumNum/sumDen)*((1-normalizationFactor)/(normalizationFactor));
 }
 
 
@@ -1478,7 +1509,7 @@ function draw() {
             sumNum = sumNum + particleShadows[i].sensingCapacity;
             sumDen = sumDen + particleShadows[i].agentCostRatio*particleShadows[i].sensingCapacity;
         }
-        weightPGD = -1*(sumNum/sumDen)*(normalizationFactor/(1-normalizationFactor));
+        weightPGD = -1*(sumNum/sumDen)*((1-normalizationFactor)/(normalizationFactor));
         // print("weightPGD: "+weightPGD);
         // print("weightPGD*alpha_i: "+weightPGD*agentCostRatio*particleShadows[selectedAgentIndex-1].sensingCapacity);
         document.getElementById("weightPGDDisplay").innerHTML = Math.round(-1*weightPGD*1000)/1000;
@@ -1588,21 +1619,28 @@ function draw() {
         
         // find the next position to be....
         var startTime = millis();
-        var weight = -15000;
-        var sum_t = 0;
+        ////var weight = -15000;
+        ////// var agent_cost = 0; // moved to bottom
+        ////var sum_t = 0;
+
+
 
         for (var i = 0; i < particleShadows.length; i++) {
             //particleShadows[i].updateNew(i);
             if(variableStepSizeMode){
-                particleShadows[i].variableStepSizeUpdate(i);
+                particleShadows[i].updateNew(i);
+                //particleShadows[i].variableStepSizeUpdate(i);
             }
             else{
                 particleShadows[i].updateNew(i);
-                ////P3
-                sum_t = sum_t + particleShadows[i].t;
-                print("index is "+ i + ",t is " + particleShadows[i].t);
-                ////P3
             }
+
+            ////P3 - moved to bottom
+            ////sum_t = sum_t + particleShadows[i].t;
+            //////agent_cost = agent_cost + particleShadows[i].sensingCapacity*particleShadows[i].agentCostRatio*particleShadows[i].t;
+            ////print("index is "+ i + ",t is " + particleShadows[i].t);
+            ////P3
+
         }
         // end - find the next position to be....
 
@@ -1615,8 +1653,9 @@ function draw() {
         ////P3
         executionTimePGD =  executionTimePGD + millis() - startTime;
         print("TimePGD : "+executionTimePGD);
-        var agent_cost = -weight*sum_t;
-        print("sum_t is :" + sum_t + " ,agent_cost is: " + agent_cost);
+        // objective values moed to bottom
+        ////// var agent_cost = weightPGD*agent_cost;
+        ////// print("Agent_cost : " + agent_cost);
         ////P3
 
         stateUpdateIterationNumber++;
@@ -2010,13 +2049,29 @@ function draw() {
     
     //updating labels
     
-    ////Objective Value
+    ////Objective Values
+    
+    // cost
+    var agent_cost = 0;
+    for(var i = 0; i<particleShadows.length; i++){
+        agent_cost = agent_cost + particleShadows[i].sensingCapacity*particleShadows[i].agentCostRatio*particleShadows[i].t;
+    }
+    agent_cost = -1*weightPGD*agent_cost;
+    //print("Agent_cost : " + agent_cost);
+    document.getElementById("costObjectiveDisplay").innerHTML = int(agent_cost);
 
+
+    // coverage 
     objectiveValueNew = round(100*globalObjective())/100;
     
     coverageLevelDisplay=document.getElementById("objectiveDisplay");
 
     coverageLevelDisplay.innerHTML=int(objectiveValueNew);
+
+
+    // overall objective
+    document.getElementById("overallObjectiveDisplay").innerHTML =  int(objectiveValueNew - agent_cost);
+
     
     
     //// Number of Agents

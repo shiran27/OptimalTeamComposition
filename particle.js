@@ -355,9 +355,28 @@ function Particle(x, y) {
         //var tStepSize = 0.001; //0.00001 is good
         //var tStepSize = 0.000005; //good for maze
         var tStepSize = 0.0001;//good for rest
+        //var tStepSize = 0.001;//trying for the blank
         
-        var nextT = this.t + tStepSize*derivatives[2];
+        // optimum tStepSize
+        if(variableStepSizeMode){
+            var di =  this.localObjectiveFunctionWitht();
+            var sumdij = di;
+            var neighbors = this.getEffectiveNeighbors();
+            var sumK1 = 1*(neighbors.length+1);
+            for(var i = 0; i<neighbors.length; i++){
+                sumdij = sumdij + this.crossDerivativeWitht(neighbors[i]);
+            }
+            tStepSize = di*sumdij/(sumK1*sq(di));
+        }
 
+        if(tBoostMode==0){
+            var nextT = this.t + tStepSize*derivatives[2];
+            //var nextT = this.t + 10*tStepSize*derivatives[2]/(this.agentCostRatio*this.sensingCapacity*this.t);
+        }else{
+
+            ////var nextT = this.t - tStepSize*derivatives[2];
+            var nextT = this.t - tStepSize*this.agentCostRatio*this.sensingCapacity;
+        }
         //var nextT = this.t + constantStepSize*derivatives[2];
         if (nextT > 1){
             nextT = 1;
@@ -1042,7 +1061,9 @@ function Particle(x, y) {
             rectMode(CENTER);
             textAlign(CENTER,CENTER);
             text(this.id+1,this.position.x,this.position.y,2*r,2*r);
-            text("t="+Math.round(this.t*100)/100,this.position.x+20,this.position.y-20,2*r,2*r);
+            if(this.t!=1){
+                text("t="+Math.round(this.t*100)/100,this.position.x+20,this.position.y-20,2*r,2*r);
+            }
         }else{
             noStroke();
             fill(100, 0, 100);
@@ -1407,12 +1428,83 @@ function Particle(x, y) {
     }
 
 
+    // P3
+    this.localObjectiveFunctionWitht = function(){// derivative with respect to t_i of H(s,t) = H_i(\bar{s}_i,\bar{t}_i^c)
+        var stepSize = descretizationLevel; 
+        var areaFactor = sq(stepSize);
+        var halfStepSize = stepSize/2;
+        var objectiveValueLocal = 0;
+              
+        /*for (var x = this.position.x-senRange+halfStepSize; x<=this.position.x+senRange-halfStepSize; x+=stepSize){
+            for(var y = this.position.y-senRange+halfStepSize; y<=this.position.y+senRange-halfStepSize; y+=stepSize){*/
+        var p = floor(sqrt(sq(this.senRange/halfStepSize)-1));
+        for (var x = this.position.x-halfStepSize*p; x<=this.position.x+halfStepSize*p; x+=stepSize){
+            for(var y = this.position.y-halfStepSize*p; y<=this.position.y+halfStepSize*p; y+=stepSize){
+                //fill(0);
+                //ellipse(x,y,2,2);
+                var interestedPoint = new Point2(x,y);
+                var eventDensity = getEventDensity(interestedPoint);
+                var dist = distP2(this.position,interestedPoint);
+                
+                if(eventDensity>0 && dist<this.senRange){
+                    //ellipse(x,y,2,2);
+                    ////objectiveValueLocal = objectiveValueLocal + (1-this.detectionProbability(interestedPoint,true))*this.sensingModelFunction(interestedPoint)*eventDensity*areaFactor;
+                    objectiveValueLocal = objectiveValueLocal + (1-this.detectionProbability(interestedPoint,true))*this.sensingModelFunctionWithoutt(interestedPoint)*eventDensity*areaFactor;
+                }
+            }
+        }
+        //print(objectiveValue);
+
+        return objectiveValueLocal - weightPGD*this.sensingCapacity*this.agentCostRatio; 
+    }
+
+    this.crossDerivativeWitht = function(j){// d_ij 
+
+        var stepSize = descretizationLevel; 
+        var areaFactor = sq(stepSize);
+        var halfStepSize = stepSize/2;
+        var objectiveValueLocal = 0;
+              
+
+        var neighbors = this.getEffectiveNeighbors();
+        
+        var index = neighbors.indexOf(j);
+        if (index > -1) {
+          neighbors.splice(index, 1);
+        }
+
+        /*for (var x = this.position.x-senRange+halfStepSize; x<=this.position.x+senRange-halfStepSize; x+=stepSize){
+            for(var y = this.position.y-senRange+halfStepSize; y<=this.position.y+senRange-halfStepSize; y+=stepSize){*/
+        var p = floor(sqrt(sq(this.senRange/halfStepSize)-1));
+        for (var x = this.position.x-halfStepSize*p; x<=this.position.x+halfStepSize*p; x+=stepSize){
+            for(var y = this.position.y-halfStepSize*p; y<=this.position.y+halfStepSize*p; y+=stepSize){
+                //fill(0);
+                //ellipse(x,y,2,2);
+                var interestedPoint = new Point2(x,y);
+                var eventDensity = getEventDensity(interestedPoint);
+                var dist1 = distP2(this.position,interestedPoint);
+                var dist2 = distP2(particleShadows[j].position,interestedPoint);
+
+
+                if(eventDensity>0 && dist1 < this.senRange && dist2 < particleShadows[j].senRange){
+                    //ellipse(x,y,2,2);
+                    ////objectiveValueLocal = objectiveValueLocal + (1-this.detectionProbability(interestedPoint,true))*this.sensingModelFunction(interestedPoint)*eventDensity*areaFactor;
+                    objectiveValueLocal = objectiveValueLocal + (1-this.detectionProbabilityWRTNeighbors(interestedPoint,true,neighbors))*this.sensingModelFunctionWithoutt(interestedPoint)*particleShadows[j].sensingModelFunctionWithoutt(interestedPoint)*eventDensity*areaFactor;
+                }
+            }
+        }
+        //print(objectiveValue);
+
+        return -1*particleShadows[j].t*objectiveValueLocal; 
+    }
+
+    // end P3
+
     this.localObjectiveFunctionWRTNeighbors = function(setOfNeighbors){
         var stepSize = descretizationLevel; 
         var areaFactor = sq(stepSize);
         var halfStepSize = stepSize/2;
         var objectiveValueLocal = 0;
-            
             
         /*for (var x = this.position.x-senRange+halfStepSize; x<=this.position.x+senRange-halfStepSize; x+=stepSize){
             for(var y = this.position.y-senRange+halfStepSize; y<=this.position.y+senRange-halfStepSize; y+=stepSize){*/
@@ -4007,3 +4099,26 @@ function removeAllAgents(){
     
 }
 
+
+// P3
+
+function switchtValues(){
+    for(var i = 0; i<particleShadows.length; i++){
+        //var agentGamma = particleShadows[i].sensingCapacity*particleShadows[i].agentCostRatio
+        var nextT =  1 - particleShadows[i].nextTToBe;
+        var tolence = 0.001;
+        if(nextT > 1){
+            nextT =  1;
+        }
+        else if (nextT < tolence){
+            nextT = tolence;
+        }
+        particleShadows[i].t = nextT;
+    }
+
+}
+
+
+
+
+// P3 - end

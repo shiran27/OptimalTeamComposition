@@ -1238,22 +1238,28 @@ function updateAndStoreDataForPlotting(){
 
 
 
-// // function for  data generation
+function startRoutine1(){
 
-// function generateResults(){
+	for(var i = 0; i < 5; i++){
+		addAgent();
+	}
 
+	document.getElementById("sensingRange").value = "100";
+	sensingRangeChanged("100");
 
-// 	for(var i = 1; i<10; i++){
+	document.getElementById("sensingDecay").value = "8";
+	sensingDecayChanged("8");
+	
+	for(var i = 0; i < 4; i++){
+		addAgent();
+	}
 
-// 		addAgent
+	generateCandidatesBtnFcn();
+	solveCentralizedGreedyBtnFcn();
+	setTimeout(deployAgentsBtnFcn, 1000);
 
+	//deployAgentsBtnFcn();
 
-// 	}
-
-
-
-
-// }
-
+}
 
 
