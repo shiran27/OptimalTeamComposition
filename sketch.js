@@ -310,7 +310,7 @@ function setup() {
 
     // P3
     
-    startRoutine1();
+    ////startRoutine1();
 
 }
 
@@ -1778,7 +1778,8 @@ function draw() {
             var approxFactor = 0.632;//1-1/e
             if(approxFactor<0){approxFactor=0;}
             var approxFactor2 = savedParameters[4].reduce(function(a, b){return Math.max(a, b);});
-            approxFactor2 = (1-approxFactor2)*(1-(1/savedParticles.length));
+            //approxFactor2 = (1-approxFactor2)*(1-(1/savedParticles.length));
+            approxFactor2 = 1-approxFactor2*(1-(1/savedParticles.length));
             consolePrint("Solving Using Centralized - General Greedy Algorithm: Finished after "+savedParameters[2]+" computations.");
             consolePrint("Approximation factors : Theoretical :- "+approxFactor+", Greedy Curvature Based :- "+approxFactor2+".");
         }

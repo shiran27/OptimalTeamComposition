@@ -1848,8 +1848,8 @@ function calculateApproxFactorsBtnFcn(){
 					}
 				}
 				var chosenClassIndex = subCostArray.indexOf(subCostArray.reduce(function(a, b){return Math.max(a, b);}));
-				print('Debug '+chosenClassIndex);
-				print(submodularityCandidates[j]);
+				// print('Debug '+chosenClassIndex);
+				// print(submodularityCandidates[j]);
 				addClassifiedAgentToPoint(classification[chosenClassIndex][0], submodularityCandidates[j].x,submodularityCandidates[j].y);
 				classArray[j] = chosenClassIndex;
 
@@ -1887,7 +1887,8 @@ function calculateApproxFactorsBtnFcn(){
 	// print(savedParameters[3].indexOf(savedParameters[3].reduce(function(a, b){return Math.max(a, b);})))
 	
 	var alpha_g = savedParameters[3].reduce(function(a, b){return Math.max(a, b);});
-	var G_cN = (1-alpha_g)*(1-(1/N));
+	//var G_cN = (1-alpha_g)*(1-(1/N));
+	var G_cN = 1-alpha_g*(1-(1/N));
 	// end greedy curvature calculation
 
 
